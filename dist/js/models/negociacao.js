@@ -11,4 +11,10 @@ export class Negociacao {
         const data = new Date(this._data.getTime()); //defensive programming
         return data;
     }
+    static criaDe(dataStr, quantidadeStr, valorStr) {
+        const date = new Date(dataStr.replace('-', ','));
+        const qtd = parseInt(quantidadeStr);
+        const valor = parseFloat(valorStr);
+        return new Negociacao(date, qtd, valor);
+    }
 }
